@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name="Mensagem" label="Mensagem" />
+    <design:attribute name="TipoMsg" label="1. Sucesso, 2. Atenção 3. Info e deixe vazio para Erro" />
+</design:component>

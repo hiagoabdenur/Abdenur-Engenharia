@@ -1,0 +1,4 @@
+<aura:component implements= 'force:lightningQuickAction,lightning:availableForFlowActions'>
+	<aura:attribute name="Mensagem" type="String"/>
+    <aura:attribute name="TipoMsg" type="Integer"/>
+</aura:component>

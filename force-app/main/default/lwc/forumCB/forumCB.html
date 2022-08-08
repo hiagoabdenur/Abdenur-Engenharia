@@ -1,0 +1,33 @@
+<template> 
+          <span><lightning-card title="Solicite Seu Orçamento">
+            <lightning-record-edit-form record-id="" object-api-name="Orcamento__c" onsuccess={handleSuccess}>
+              <lightning-messages></lightning-messages>
+
+                  <lightning-input-field field-name='Nome__c'> </lightning-input-field>
+
+                   <lightning-input-field field-name='Sobrenome__c'></lightning-input-field>
+
+                   <lightning-input-field field-name='Email__c'> </lightning-input-field>
+
+                   <lightning-input-field field-name='Celular__c'></lightning-input-field>
+
+                   <lightning-input-field field-name='Rua__c' value={rua}></lightning-input-field>
+
+                   <lightning-input-field field-name='Numero__c'> </lightning-input-field>
+
+                   <lightning-input-field field-name='Bairro__c' value={bairro}> </lightning-input-field>
+
+                   <lightning-input-field field-name='Complemento__c'></lightning-input-field>
+
+                   <lightning-input-field field-name='CEP__c' onchange={mudouCEP}>  </lightning-input-field>
+
+                   <lightning-input-field field-name='Cidade__c' value={cidade}></lightning-input-field>
+
+                   <lightning-input-field field-name='provincia__c'></lightning-input-field>
+
+                    <br><lightning-button variant="brand" type="submit" name="save" label="Enviar">
+                        </lightning-button>
+                           </lightning-record-edit-form>
+                            </lightning-card>
+                             </span>
+                              </template>

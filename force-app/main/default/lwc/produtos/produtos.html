@@ -1,0 +1,68 @@
+<template> 
+      <lightning-card class="test">
+        <div class="centralizarProdutos test slds-text-align_center">
+        <ul class="card-wrapper ">
+        <li class="card">
+            <div class="slds-text-align_center rotulo siteforceContentArea "> Reforma
+            <img src={reformaPrint} onclick={reformaProduto}>
+        </div>
+        </li>
+        <li class="card">
+            <div class="slds-text-align_center rotulo siteforceContentArea"> Construção
+                <img src={construcaoPrint} onclick={construcaoProduto}>
+            </div>
+        </li>
+        <li class="card">
+            <div class="slds-text-align_center rotulo siteforceContentArea"> Legalização
+                <img src={legalizacaoPrint} onclick={legalizacaoProduto}>
+            </div>
+        </li>
+        </ul> 
+    </div>  
+    <template if:true={mostrarModal}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+            </svg>
+            <span class="slds-assistive-text">Cancel and close</span>
+            </button>
+            <div class="slds-modal__header">
+            <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Reforma</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <p>Reforma é o nome que se dá a uma mudança de forma (esta entendida no sentido amplo), uma modificação na forma, na natureza ou no tamanho de algo, a fim de aprimorá-lo.
+                Tambem pode ser realizado através de pequenos reparos, ou seja, aquilo que não estava agradável aos olhos do dono, e ou que ja tenha se passado muito tempo de sua construção inicial. 
+                Na arquitetura, reforma é uma reconstrução de um edifício que, ou está em condições ruins, necessitando-se de reparos, ou recebeu novo projeto, com vistas à modificação (muitas vezes utilizando-se de redes de proteção envolvendo o edifício).</p>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning-button variant="brand" label="Próximo" onclick={passarPagina}>
+                </lightning-button>
+            </div>
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+        <br>
+        <div if:true={mostrarFormulario} class="slds-text-align_center" style="font-size: 15px"> <Strong>Solicite Seu Orçamento!</Strong></div>
+            <br>
+            <lightning-record-edit-form if:true={mostrarFormulario} class="tamanhoCampo centralizarProdutos"  record-id="" object-api-name="Orcamento__c" onsuccess={handleSuccess}>
+                <lightning-input-field class="tamanhoCampo" field-name='Nome__c'> </lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Sobrenome__c'></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Email__c'> </lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Celular__c'></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Rua__c' value={rua}></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Numero__c'> </lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Bairro__c' value={bairro}></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Complemento__c'></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='CEP__c' onchange={mudouCEP}> </lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='Cidade__c' value={cidade}></lightning-input-field>
+                <lightning-input-field class="tamanhoCampo" field-name='provincia__c' value={estado}></lightning-input-field>
+                <br>
+                <lightning-button variant="brand" type="submit" name="save" label="Enviar">
+                </lightning-button>
+            </lightning-record-edit-form>
+    </lightning-card>
+</template>
+

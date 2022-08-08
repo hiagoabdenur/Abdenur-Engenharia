@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap grid">
+            <template for:each={produtosImagens} for:item="prod">
+                <div class="slds-col slds-size--1-of-1 slds-medium-size--1-of-3" key={prod.id}>
+                    <!-- 1 slide-->
+                    <div key={prod.produto.Id} class="swiper-slide slide-card-produto">
+                        <div class="slider-box">
+                            <div class="titulo">
+                                {prod.produto.Name}
+                            </div>
+                            <div class="content">
+                                <a id={prod.produto.Id}>
+                                    <div class="img-box container" style={prod.style}>
+                                        <div class="img-box container">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </br>
+                </div>
+            </template>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="slds-float--right">
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <template if:true={listaFotos2} for:each={listaFotos2} for:item="foto">
+                <div key={foto.url} class="swiper-slide">
+                    <div class="img-box">
+                        <img src={foto.url}></img>
+                    </div>
+
+                </div>
+
+            </template>
+
+            <template if:false={listaFotos2}>
+                <div class="img-box">
+                    <c-image-display
+                        image-url="https://data-fun-5841--c.documentforce.com/servlet/servlet.ImageServer?id=0151g000000Q5mH&oid=00D1g0000001FvE&lastMod=1586955811000">
+                    </c-image-display>
+                </div>
+            </template>
+
+
+        </div>
+        <!-- Add Arrows -->
+        <div key={foto} class="swiper-button-next"></div>
+        <div key={foto} class="swiper-button-prev"></div>
+    </div>
+</template>
