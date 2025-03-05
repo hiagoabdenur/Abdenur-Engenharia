@@ -1,0 +1,61 @@
+<template>
+    <lightning-card>
+        <div class="custom-box">
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <lightning-icon icon-name="standard:account" size="medium"></lightning-icon>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__title slds-truncate">Recomendações de assinatura</span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </lightning-card>
+        <lightning-card>
+                <lightning-card>
+                    <lightning-accordion allow-multiple-sections-open>
+                        <lightning-accordion-section name="informacaoPagamento" label="Informações de pagamento"
+                            class="slds-box slds-theme_shade slds-m-bottom_medium">
+                            <div class="slds-m-around_medium">
+                                <div class="slds-form" role="list">
+                                    <div class="slds-grid slds-gutters">
+                                        <!-- Primeira Coluna -->
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-form-element slds-form-element_stacked">
+                                                <p><strong>Plano:</strong></p>
+                                                <p><strong>Valor:</strong></p>
+                                            </div>
+                                        </div>
+                            
+                                        <!-- Segunda Coluna -->
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-form-element slds-form-element_stacked">
+                                                <p><strong>Renova em:</strong></p>
+                                                <p><strong>Número de parcelas:</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </lightning-accordion-section>
+            
+                        <lightning-accordion-section name="informacaoProduto" label="Informações do produto"
+                            class="slds-box slds-theme_shade">
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                </lightning-card>
+    </lightning-card>
+</template>
